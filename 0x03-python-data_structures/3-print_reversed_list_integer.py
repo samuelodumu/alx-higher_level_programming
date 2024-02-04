@@ -2,6 +2,8 @@
 
 
 def print_reversed_list_integer(my_list=[]):
+    if my_list == None:
+        return my_list
     my_list.reverse()
     x = len(my_list)
     for i in range(x):
