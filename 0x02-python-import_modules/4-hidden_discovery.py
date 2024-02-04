@@ -5,5 +5,5 @@ if __name__ == '__main__':
     func = dir(hidden_4)
     func.sort()
     for i in func:
-        if i.startswith('__') == False:
+        if i.startswith('__') is False:
             print('{}'.format(i))
