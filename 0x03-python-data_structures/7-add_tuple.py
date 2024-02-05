@@ -10,14 +10,14 @@ def add_tuple(tuple_a=(), tuple_b=()):
         elif not tuple_b:
             x.append(tuple_a)
             break
-        elif not tuple_a and tuple_b:
+        elif not tuple_a and not tuple_b:
             x.append(0)
             break
         elif len(tuple_a) == i:
             x.append(tuple_b[i])
         elif len(tuple_b) == i:
             x.append(tuple_a[i])
-        elif len(tuple_a) and len(tuple_b) == i:
+        elif len(tuple_a) == i and len(tuple_b) == i:
             x.append(0)
         else:
             x.append(tuple_a[i] + tuple_b[i])
