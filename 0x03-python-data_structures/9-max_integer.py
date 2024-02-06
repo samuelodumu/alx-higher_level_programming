@@ -7,13 +7,13 @@ def max_integer(my_list=[]):
     else:
         while i - 1 > 1:
             j = 0
-            while j < i:
+            while j < i - 1:
                 if my_list[j] > my_list[j + 1]:
                     temp = my_list[j]
                     my_list[j] = my_list[j + 1]
                     my_list[j + 1] = temp
                 else:
-                    continue
+                    pass
                 j += 1
             i -= 1
         return my_list[-1]
