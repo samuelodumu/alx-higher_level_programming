@@ -7,4 +7,4 @@ def print_sorted_dictionary(a_dictionary):
     sorted_dict = dict(sorted_tup)
 
     for i in sorted_dict.items():
-        print("{} : {}".format(i[0], i[1]))
+        print("{}: {}".format(i[0], i[1]))
