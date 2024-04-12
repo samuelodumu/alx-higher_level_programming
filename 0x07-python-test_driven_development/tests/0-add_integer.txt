@@ -26,3 +26,18 @@ TypeError: a must be an integer
 
 >>> add_integer(1)
 99
+
+>>> add_integer(int("Hi"))
+Traceback (most recent call last):
+	...
+ValueError: invalid literal for int() with base 10: 'Hi'
+
+>>> add_integer(float("inf"), -1)
+Traceback (most recent call last):
+	...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(float("NaN"), 5)
+Traceback (most recent call last):
+	...
+ValueError: cannot convert float NaN to integer
