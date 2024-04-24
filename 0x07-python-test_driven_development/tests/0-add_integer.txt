@@ -1,8 +1,7 @@
 Import the `0-add_integer` module
-Testing `add_integer`
-
 >>> add_integer = __import__("0-add_integer").add_integer
 
+Testing `add_integer`
 >>> add_integer(1, 2)
 3
 
