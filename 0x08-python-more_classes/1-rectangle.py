@@ -19,7 +19,7 @@ class Rectangle:
     def width(self, value):
         """sets width"""
         if type(value) is not int:
-            raise TypeeError("width must be an integer")
+            raise TypeError("width must be an integer")
         if width < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
