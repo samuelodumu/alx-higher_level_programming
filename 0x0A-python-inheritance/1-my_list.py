@@ -10,9 +10,10 @@ class MyList(list):
         new_list = self.copy()
         n = len(new_list)
         if n == 0:
-            return []
-        for i in range(n):
-            for j in range(n - i - 1):
-                if new_list[j] > new_list[j + 1]:
-                    new_list[j], new_list[j + 1] = new_list[j + 1], new_list[j]
-        print(new_list)
+            print("[]")
+        else:
+            for i in range(n):
+                for j in range(n - i - 1):
+                    if new_list[j] > new_list[j + 1]:
+                        new_list[j], new_list[j + 1] = new_list[j + 1], new_list[j]
+            print(new_list)
