@@ -8,11 +8,11 @@ class MyList(list):
     def print_sorted(self):
         """prints the list, but sorted (ascending sort)"""
         new_list = self.copy()
-        if len(new_list) == 0:
+        n = len(new_list)
+        if n == 0:
             return []
-        for i in range(len(new_list) - 1):
-            if new_list[i] > new_list[i + 1]:
-                tmp = new_list[i]
-                new_list[i] = new_list[i + 1]
-                new_list[i + 1] = tmp
+        for i in range(n):
+            for j in range(n - i - 1):
+                if new_list[j] > new_list[j + 1]:
+                    new_list[j], new_list[j + 1] = new_list[j + 1], new_list[j]
         print(new_list)
