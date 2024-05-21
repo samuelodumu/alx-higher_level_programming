@@ -15,5 +15,7 @@ class MyList(list):
             for i in range(n):
                 for j in range(n - i - 1):
                     if new_list[j] > new_list[j + 1]:
-                        new_list[j], new_list[j + 1] = new_list[j + 1], new_list[j]
+                        temp = new_list[j]
+                        new_list[j] = new_list[j + 1]
+                        new_list[j + 1] = temp
             print(new_list)
