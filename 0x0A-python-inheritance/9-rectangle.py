@@ -27,7 +27,7 @@ class Rectangle(BaseGeometry):
             self.__height = height
 
     def area(self):
-        if self.__width is 0 or self.__height is 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
         else:
             return self.__width * self.__height
