@@ -11,7 +11,7 @@ class Rectangle(BaseGeometry):
         try:
             self.integer_validator("width", width)
         except Exception as e:
-            print(f"{e.__class__.__name__} {e}")
+            print(f"[{e.__class__.__name__}] {e}")
             no_exception = False
 
         if no_exception:
@@ -20,7 +20,7 @@ class Rectangle(BaseGeometry):
         try:
             self.integer_validator("height", height)
         except Exception as e:
-            print(f"{e.__class__.__name__} {e}")
+            print(f"[{e.__class__.__name__}] {e}")
             no_exception = False
 
         if no_exception:
