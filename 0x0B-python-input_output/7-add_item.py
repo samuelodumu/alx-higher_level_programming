@@ -23,5 +23,6 @@ def main():
         new_list = new_list + sys.argv[1:]
         save_to_json_file(new_list, filename)
 
+
 if __name__ == "__main__":
     main()
