@@ -14,19 +14,14 @@ def main():
     filename = "add_item.json"
 
     if os.path.exists(filename):
-        new_list = load_from_json_file(filename)
+        existing_list = load_from_json_file(filename)
 
-        for arg in sys.argv[1:]:
-            new_list.append(arg)
+        new_list = existing_list + sys.argv[1:]
         save_to_json_file(new_list, filename)
-        return load_from_json_file(filename)
 
     else:
-        for arg in sys.argv[1:]:
-            new_list.append(arg)
+        new_list = new_list + sys.argv[1:]
         save_to_json_file(new_list, filename)
-        return load_from_json_file(filename)
-
 
 if __name__ == "__main__":
     main()
