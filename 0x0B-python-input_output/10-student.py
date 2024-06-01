@@ -19,16 +19,16 @@ class Student:
             for item in attrs:
                 # check if each item in the list is a string
                 if Student.all_items_str(attrs):
+                    # check if the list item is in the dict
                     for key, value in self.__dict__.items():
-                        # check if the list item is in the dict
                         if item == key:
                             # add it to selected_dict
                             selected_dict[key] = value
                         else:
                             continue
-                    return selected_dict
                 else:
                     break
+            return selected_dict
         return self.__dict__
 
     @staticmethod
