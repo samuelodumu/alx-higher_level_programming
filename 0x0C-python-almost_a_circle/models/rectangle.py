@@ -7,6 +7,7 @@ class Rectangle(Base):
     """Rectangle class"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializing attributes"""
+        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -73,3 +74,9 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        return (
+            f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
+            f"{self.__width}/{self.__height}"
+        )
