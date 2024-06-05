@@ -106,3 +106,6 @@ class Rectangle(Base):
 
             for i in range(min(len(attrs), args_len)):
                 setattr(self, attrs[i], args[i])
+
+    def to_dictionary(self):
+        return self.__dict__
