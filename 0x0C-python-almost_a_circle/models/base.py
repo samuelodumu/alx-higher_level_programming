@@ -28,7 +28,7 @@ class Base:
         """writes the JSON string representation of `list_objs` to a file"""
         list_dicts = []
 
-        with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
+        with open(f"{cls.__name__}.json", "w") as f:
             if list_objs is None:
                 json.dump(list_dicts, f)
             else:
@@ -36,7 +36,5 @@ class Base:
                     if isinstance(obj, cls):
                         obj_dict_rep = obj.to_dictionary()
                         list_dicts.append(obj_dict_rep)
-                serialized_str = Base.to_json_string(list_dicts)
-                data = json.loads(serialized_str)
-                pretty_json_str = json.dumps(data)
-                json.dump(data, f)
+                serialized_str = cls.to_json_string(list_dicts)
+                f.write(serialized_str)
