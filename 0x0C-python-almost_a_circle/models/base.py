@@ -30,7 +30,7 @@ class Base:
 
         with open(f"{cls.__name__}.json", "w", encoding="utf-8") as f:
             if list_objs is None:
-                json.dump(string_rep, f)
+                json.dump(list_dicts, f)
             else:
                 for obj in list_objs:
                     if isinstance(obj, cls):
