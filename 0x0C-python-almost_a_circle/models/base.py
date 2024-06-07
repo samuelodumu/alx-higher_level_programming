@@ -50,6 +50,9 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
-        demo = cls(8, 4)
+        if cls == Rectangle:
+            demo = cls(8, 4)
+        else:
+            demo = cls(5)
         demo.update(**dictionary)
         return demo
