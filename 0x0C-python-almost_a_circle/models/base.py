@@ -32,11 +32,16 @@ class Base:
             if list_objs is None:
                 json.dump(list_dicts, f)
             else:
+                # loop over each object in object list
                 for obj in list_objs:
                     if isinstance(obj, cls):
+                        # find the dictionary representation of the object
                         obj_dict_rep = obj.to_dictionary()
+                        # appended them to list
                         list_dicts.append(obj_dict_rep)
+                # serialized the list
                 serialized_str = cls.to_json_string(list_dicts)
+                # wrote serialized list to file
                 f.write(serialized_str)
 
     @staticmethod
@@ -52,9 +57,27 @@ class Base:
         """returns an instance with all attributes already set"""
         if cls.__name__ == "Square":
             demo = cls(5)
-            demo.update(**dictionary)
-            return demo
-        else:
+        elif cls.__name__ == "Rectangle":
             demo = cls(8, 4)
-            demo.update(**dictionary)
-            return demo
+
+        demo.update(**dictionary)
+        return demo
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        instances = []
+        try:
+            # open the file for reading
+            with open(filename, 'r') as f:
+                content_in_list = f.read()
+                # convert JSON string `content_in_list` to python list
+                list_dicts = cls.from_json_string(content_in_list)
+                # create a class instance from each dict in the list
+                for i in range(len(list_dicts)):
+                    instance = cls.create(**list_dicts[i])
+                    instances.append(instance)
+                return instances
+        except FileNotFoundError:
+            return []
