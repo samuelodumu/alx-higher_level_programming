@@ -1,12 +1,16 @@
 #!/usr/bin/python3
+"""Unittests for the Base class"""
 
 import unittest
 import json
 from models.base import Base
 
 
-class Test_base(unittest.TestCase):
+class TestBaseClass(unittest.TestCase):
+    """Class for testing base class"""
+
     def test_equality(self):
+        """Tests equality"""
         b1 = Base()
         b2 = Base(35)
         b3 = Base()
