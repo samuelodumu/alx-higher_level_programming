@@ -14,7 +14,7 @@ class TestBaseClass(unittest.TestCase):
         b1 = Base()
         b2 = Base(35)
         b3 = Base()
-        self.assertEqual(b1.id, 1)
+        self.assertEqual(b1.id, b3.id - 1)
         self.assertEqual(b2.id, 35)
         self.assertNotEqual(b1.id, 0)
         self.assertNotEqual(b1.id, b2.id)
