@@ -9,7 +9,7 @@ from models.base import Base
 class TestBaseClass(unittest.TestCase):
     """Class for testing base class"""
 
-    def test_equality(self):
+    def test_id(self):
         """Tests equality"""
         b1 = Base()
         b2 = Base(35)
