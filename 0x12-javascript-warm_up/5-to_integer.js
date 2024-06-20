@@ -4,9 +4,9 @@ const process = require('node:process');
 
 const args = process.argv.slice(2);
 
-let argToInt = parseFloat(args[0]);
+const argToInt = parseFloat(args[0]);
 
-if (typeof (argToInt !== 'number')) {
+if (isNaN(argToInt)) {
   console.log('Not a number');
 } else {
   console.log('My number: ' + argToInt);
