@@ -2,12 +2,12 @@
 
 class Rectangle {
   constructor (w, h) {
-    this.width = w;
-    this.height = h;
-    if (this.width <= 0 || this.height <= 0) {
-      return {}
+    if ((!w || !h) || (w <= 0 || h <= 0)) {
+      return Object.assign(this, {});
+    } else {
+      this.width = w;
+      this.height = h;
     }
   }
 }
-
 module.exports = Rectangle;
