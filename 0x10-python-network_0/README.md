@@ -1,7 +1,6 @@
 ## 0x10. Python - Network #0
 
-I'm so excited to be learning JS !!!
-My answers to the JavaScript - Warm up project.
+My answers to the first Python network project.
 
 PS: These answers are mine and were not copied from anywhere, I would appreciate it if I'm also not copied.
 
