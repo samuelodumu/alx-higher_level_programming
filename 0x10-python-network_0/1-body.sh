@@ -1,3 +1,3 @@
 #!/bin/bash
-# script that takes in a url and displays the size of the body of the response
+# script that sends a get request to a url and displays the body of the response
 curl -sL $1
