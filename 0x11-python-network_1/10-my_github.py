@@ -5,9 +5,9 @@ import requests as r
 import sys
 
 if __name__ == '__main__':
-    url = 'https://github.com/samuelodumu'
     username = sys.argv[1]
     password = sys.argv[2]
+    url = f'https://api.github.com/users/{username}'
 
     res = r.get(url, auth=r.auth.HTTPBasicAuth(username, password))
-    print(res.headers['X-GitHub-Request-Id'])
+    print(res.json()['id'])
