@@ -10,4 +10,7 @@ if __name__ == '__main__':
     url = f'https://api.github.com/users/{username}'
 
     res = r.get(url, auth=r.auth.HTTPBasicAuth(username, password))
-    print(res.json()['id'])
+    if res.status_code == 200:
+        print(res.json()['id'])
+    else:
+        print(None)
